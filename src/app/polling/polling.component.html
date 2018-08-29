@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="questionDiv col-xs-12 col-sm-12 col-md-12 col-lg-12">{{pollQestionOption?.pollId}}. &nbsp;&nbsp;&nbsp;&nbsp;{{pollQestionOption?.question}}</div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 pull-right">
+            <p *ngIf="pollQestionOption?.optionsA !== ''">A. &nbsp;&nbsp;&nbsp;&nbsp; {{pollQestionOption?.optionsA}}</p>
+            <p *ngIf="pollQestionOption?.optionsB !== ''">B. &nbsp;&nbsp;&nbsp;&nbsp; {{pollQestionOption?.optionsB}}</p>
+            <p *ngIf="pollQestionOption?.optionsC !== ''">C. &nbsp;&nbsp;&nbsp;&nbsp; {{pollQestionOption?.optionsC}}</p>
+            <p *ngIf="pollQestionOption?.optionsD !== ''">D. &nbsp;&nbsp;&nbsp;&nbsp; {{pollQestionOption?.optionsD}}</p>
+            <p *ngIf="pollQestionOption?.optionsE !== ''">E. &nbsp;&nbsp;&nbsp;&nbsp; {{pollQestionOption?.optionsE}}</p>
+            <p *ngIf="pollQestionOption?.optionsF !== ''">F. &nbsp;&nbsp;&nbsp;&nbsp; {{pollQestionOption?.optionsF}}</p>
+            <p *ngIf="pollQestionOption?.optionsG !== ''">G. &nbsp;&nbsp;&nbsp;&nbsp; {{pollQestionOption?.optionsG}}</p>
+        </div>
+        <div class="gChart col-xs-12 col-sm-8 col-md-8 col-lg-8 pull-left">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadding">
+                <h3>Poll Result</h3>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 noPadding" *ngIf="showChart">
+                <ngx-charts-bar-vertical [view]="view" [scheme]="colorScheme" [results]="dataArr" [xAxis]="showXAxis" [yAxis]="showYAxis" [showXAxisLabel]="showXAxisLabel" [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel" [showDataLabel]="showDataLabel"
+                    (select)="onSelect($event)">
+                </ngx-charts-bar-vertical>
+            </div>
+
+        </div>
+    </div>
+</div>

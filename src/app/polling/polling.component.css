@@ -1,0 +1,14 @@
+.questionDiv {
+    margin: 25px auto;
+    font-size: 25px;
+}
+
+.gChart {
+    border-right: 1px solid;
+    border-top: 1px solid;
+}
+
+.noPadding {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
