@@ -1,7 +1,7 @@
 <div class='smMarginTop bg-White'>
     <form [formGroup]='form' (ngSubmit)="savePost()">
         <div class="form-group" [class.has-error]="question.touched && question.invalid" [class.has-success]="question.valid">
-            <label for="question" class="lblTxt">Enter Question </label>
+            <label for="question" class="lblTxt">Enter Question & Options Below </label>
             <input type="text" class="form-control input-lg" id="question" formControlName="question" placeholder="Enter Question*">
         </div>
 
