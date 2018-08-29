@@ -1,10 +1,13 @@
-<div class='smMarginTop'>
+<div class='smMarginTop bg-White'>
     <form [formGroup]='form' (ngSubmit)="savePost()">
         <div class="form-group" [class.has-error]="title.touched && title.invalid" [class.has-success]="title.valid">
-            <label for="title">Enter question number to be active: </label>
-            <input type="number" min="1" class="form-control" id="title" formControlName="title" placeholder="Enter Question Number*">
+            <label for="title" class="lblTxt">Enter question number to be active: </label>
+            <input type="number" min="1" class="form-control qNumber" id="title" formControlName="title" placeholder="Enter Question Number*">
         </div>
-        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Activate</button>
+        <div class="text-right alignRight">
+            <button type="submit" class="btn btn-primary btnAlignRight" [disabled]="!form.valid">Activate</button>
+        </div>
+
     </form>
     <br><br>
     <div *ngIf='showActive'><b>Qusetion '{{ form.value.title }}' is set to active</b></div>

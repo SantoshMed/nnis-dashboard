@@ -1,7 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~bootstrap/dist/css/bootstrap.css';
-* {
-    margin: 0;
-    padding: 0;
+body {
+    background: #ddd;
+}
+
+.noPadding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.bg-White {
+    background: #fff;
+}
+
+.bgBlue {
+    background: #28376c;
 }

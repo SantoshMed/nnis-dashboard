@@ -1,14 +1,24 @@
 .headerBtn {
-    width: 100%;
+    position: fixed;
+    top: 0px;
     height: 80px;
-    background-color: #00226538;
+    background: #fff;
+}
+
+img {
+    margin-top: 6px;
+}
+
+.gradientBg {
+    background: url(../../assets/img/gradient.png) no-repeat;
+    height: 80px;
 }
 
 ul {
     text-align: right;
     position: relative;
-    right: 50px;
-    top: 17px;
+    right: 20px;
+    top: 14px;
     bottom: 17px;
 }
 
@@ -25,18 +35,11 @@ ul li {
 }
 
 ul li a {
-    color: #002265;
+    color: #fff;
     text-decoration: none;
 }
 
-ul li a:hover,
-ul li a:active,
-ul li a:focus {
-    color: #002265;
-    text-decoration: underline;
-}
-
 .active {
-    color: #fff !important;
-    text-decoration: underline !important;
+    border: 2px solid #fff;
+    border-radius: 50px !important;
 }

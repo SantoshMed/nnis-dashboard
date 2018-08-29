@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { SetQuestionComponent } from './set-question/set-question.component';
 import { SetQuestionActiveComponent } from './set-question-active/set-question-active.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     PollingComponent,
     HeaderComponent,
     SetQuestionComponent,
-    SetQuestionActiveComponent
+    SetQuestionActiveComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

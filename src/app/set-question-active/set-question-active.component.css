@@ -1,5 +1,26 @@
 .smMarginTop {
-    width: 50%;
-    margin: 20px auto 20px auto;
-    padding: 20px;
+    width: 70%;
+    margin: 20px auto 40px auto;
+    padding: 50px 100px;
+    border-top-left-radius: 60px;
+    box-shadow: 1px 1px 1px 1px #a1a8c0;
+}
+
+.qNumber {
+    height: 50px;
+    margin-top: 20px;
+}
+
+.lblTxt {
+    font-size: 20px;
+}
+
+.btnAlignRight {
+    width: 25%;
+    height: 50px;
+    font-size: 25px;
+    font-weight: 500;
+    outline: none;
+    margin-top: 15px;
+    border-radius: 50px;
 }

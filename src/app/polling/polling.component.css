@@ -1,14 +1,42 @@
 .questionDiv {
-    margin: 25px auto;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0px;
     font-size: 25px;
+    color: #fff;
+}
+
+.smMarginTop {
+    width: 80%;
+    margin: 30px auto 20px auto;
 }
 
 .gChart {
-    border-right: 1px solid;
-    border-top: 1px solid;
+    box-shadow: 1px 1px 1px 1px #a1a8c0;
 }
 
-.noPadding {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
+.optionsCircle {
+    padding: 13px;
+    margin-bottom: 15px;
+    background: #51a6c3;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.alphaCircle {
+    background: #fff;
+    padding: 7px 12px;
+    border-radius: 50px;
+    color: #51a6c3;
+}
+
+.qCircle {
+    padding: 7px 7px;
+    border-radius: 50px;
+    border: 2px solid #ddd;
+}
+
+.leftPadding {
+    padding-left: 60px;
 }

@@ -29,7 +29,7 @@ export class PollingComponent implements OnInit {
     dataTable: [ ]
   }; */
 
-  view: any[] = [];
+  view: any[] = [800, 500];
 
   showXAxis = true;
   showYAxis = true;
@@ -37,12 +37,12 @@ export class PollingComponent implements OnInit {
   showLegend = false;
   showXAxisLabel = true;
   showDataLabel = true;
-  xAxisLabel = 'Option';
+  xAxisLabel = 'Options';
   showYAxisLabel = true;
-  yAxisLabel = 'Couunt';
+  yAxisLabel = 'Percentage';
 
   colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+    domain: ['#907aa9', '#439ab6', '#18A347', '#AAAAAA']
   };
 
   constructor(private service: PollingService) { }
@@ -63,19 +63,53 @@ export class PollingComponent implements OnInit {
 
         this.showChart = true;
         const res = response.result.result;
+        const resLen = res.length;
+        const arr = [];
+        const finalRes = [];
+        for (let i = 0; i < resLen; i++) {
+          const match = /\r|\n/.exec(res[i].polloption);
+          if ( match ) {
+            arr.push({'option': res[i].polloption, 'count': res[i].pollcount });
+          } else {
+            finalRes.push({'option': res[i].polloption, 'count': res[i].pollcount });
+          }
+        }
+        this.remove_duplicates(arr, finalRes);
+        const totalCount = finalRes.map((item) => {
+          return item.count;
+        }).reduce((total, num) => {
+          return total += num;
+        });
         const dataArr = [];
-        res.forEach(element => {
-          console.log(typeof(element.polloption));
-          console.log('Option: ' + element.polloption + '  Length: ' + element.polloption.length);
-          const arr1 = {name : 'Option ' + element.polloption,  value: element.pollcount};
+        finalRes.forEach(element => {
+          const arr1 = {name : 'Option ' + element.option,  value: this.getPercent(element.count, totalCount)};
           dataArr.push(arr1);
         });
         this.dataArr = dataArr;
-        console.log('data Arra' , this.dataArr);
       });
   }
 
   onSelect(event) {
-    console.log(event);
+    // console.log(event);
   }
+
+  remove_duplicates(a, b) {
+
+    const len = a.length;
+    b = b.filter( function( item ) {
+        for ( let i = 0; i < len; i++ ) {
+            if ( a[i].option === item.option ) {
+                const sum = a[i].count + item.count;
+                item.count = sum;
+            }
+        }
+        return true;
+    });
+  }
+
+  getPercent(num, total) {
+    const calcNum = (num / total) * 100;
+    return Math.max( Math.round(calcNum * 10) / 10 ).toFixed(1);
+  }
+
 }

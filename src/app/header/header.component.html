@@ -1,8 +1,13 @@
-<div class='headerBtn'>
+<div class='container-fluid noPadding bg-White'>
+    <div class='col-sm-4 col-md-4 col-lg-4 pull-left noPadding'>
+        <img src="assets/img/logo.png" class="img-responsive" alt="logo">
+    </div>
+    <div class='col-sm-8 col-md-8 col-lg-8 pull-right gradientBg noPadding'>
+        <ul>
+            <li routerLinkActive="active"><a routerLink="/setQuestion">Set Question</a></li>
+            <li routerLinkActive="active"><a routerLink="/setActive">Set Question Active</a></li>
+            <li routerLinkActive="active"><a routerLink="/polling">Get Poll Result</a></li>
+        </ul>
+    </div>
 
-    <ul>
-        <li><a routerLink="/setQuestion" routerLinkActive="active">Set Question</a></li>
-        <li><a routerLink="/setActive" routerLinkActive="active">Set Question Active</a></li>
-        <li><a routerLink="/polling" routerLinkActive="active">Get Poll Result</a></li>
-    </ul>
 </div>
